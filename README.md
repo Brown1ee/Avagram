@@ -1,5 +1,5 @@
 # Avagram
-This is an application where you can login to your profile and add pictures to your profile
+This is an application where you can login to your profile and add pictures
 
 This is a SignUp page 
 ![image](https://user-images.githubusercontent.com/42550136/59769684-51c04d00-92af-11e9-9f0b-0b219c0ffe51.png)

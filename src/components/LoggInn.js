@@ -49,7 +49,7 @@ class LoggInn extends Component {
   onSubmit = event => {
     event.preventDefault();
     axios
-      .post("http://localhost:8080/api/authenticate", this.state)
+      .post("https://avagram.herokuapp.com/api/authenticate", this.state)
       .then(res => {
         if (res.data.token) {
           sessionStorage.setItem("token", res.data.token);
@@ -59,13 +59,12 @@ class LoggInn extends Component {
           throw error;
         }
       })
-      .catch(err => {
-        this.setState({ error: err.response.data.error });
-      });
+      .catch(err => console.log("aici", err));
   };
+  // this.setState({ error: err.response.data.error });
 
   componentDidMount() {
-    fetch("http://localhost:8080/api/home")
+    fetch("https://avagram.herokuapp.com/api/home")
       .then(res => res.text())
       .then(res => {
         if (this._isMounted) {

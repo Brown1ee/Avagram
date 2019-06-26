@@ -1,10 +1,10 @@
 # Avagram
 This is an application where you can login to your profile add pictures ,delete them and view in full size.
 
-This is a SignUp page 
-![image](https://user-images.githubusercontent.com/42550136/59769684-51c04d00-92af-11e9-9f0b-0b219c0ffe51.png)
+This is a SignUp page
+![image](https://user-images.githubusercontent.com/42550136/60168352-5768e600-980d-11e9-8e42-8fed75b2a94e.png)
 Login page:
-![image](https://user-images.githubusercontent.com/42550136/59769839-977d1580-92af-11e9-9f63-7876d0199c79.png)
+![image](https://user-images.githubusercontent.com/42550136/60168536-b0d11500-980d-11e9-817c-77f477a1bd06.png)
 
 Profile page:
 ![image](https://user-images.githubusercontent.com/42550136/59770011-e925a000-92af-11e9-84ff-8143a7911fb3.png)

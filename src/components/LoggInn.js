@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import "./Login.jsx";
 import {
   Container,
   Text,
@@ -13,7 +12,7 @@ import {
   GlobalStyle,
   JustFormContainer,
   BackgroungPhoto,
-  Color
+  BackgroundImg
 } from "./LoggInn.jsx";
 import axios from "axios";
 import classNames from "classnames";
@@ -21,6 +20,7 @@ import { Label } from "./LoggInn.jsx";
 import { Row } from "./LoggInn.jsx";
 import { Checkbox } from "./LoggInn.jsx";
 import { LogInButton } from "./LoggInn.jsx";
+import background from "../static/background.jpg";
 
 class LoggInn extends Component {
   _isMounted = true;
@@ -85,13 +85,7 @@ class LoggInn extends Component {
     return (
       <div>
         <BackgroungPhoto>
-          <Color />
-          <img
-            src="https://image.freepik.com/free-photo/multi-ethnic-group-friends-talking-using-smartphones-meeting_1163-5149.jpg"
-            width="100%"
-            height="100%"
-            alt="back-font"
-          />
+          <BackgroundImg src={background} />
         </BackgroungPhoto>
         <GlobalStyle />
         <Container>
@@ -102,7 +96,7 @@ class LoggInn extends Component {
         <ContainerForFormContainer>
           <FormContainer>
             <form onSubmit={this.onSubmit}>
-              <Emblema>Avagram</Emblema>
+              <Emblema>Login Now</Emblema>
               <JustFormContainer>
                 <Row>
                   <Label>Email</Label>

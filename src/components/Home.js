@@ -1,8 +1,13 @@
 import React, { Component } from "react";
 import "./LoggInn.jsx";
-import "./Login.jsx";
 import axios from "axios";
 import { Header } from "./Home.jsx";
+import logo from "../static/logo.png";
+import background from "../static/background.jpg";
+import tweet from "../static/tweet.png";
+import face from "../static/face.png";
+import insta from "../static/insta.png";
+
 import {
   ErrorText,
   CreateAccountButton,
@@ -13,12 +18,19 @@ import {
   LabelAndInputRow,
   LabelAndInputRowContainer,
   LinkForLogin,
-  LinkForLoginContainer,
   GlobalStyle,
-  ContainerForContainerForCreateAccountFormContainer
+  ContainerForContainerForCreateAccountFormContainer,
+  ContainerForSocials,
+  SocialsEmblemas,
+  PresentationWeb
 } from "./Home.jsx";
 import { BackgroungPhoto } from "./Home.jsx";
-import { Color } from "./Home.jsx";
+import {
+  Logo,
+  LogoText,
+  ContainerForLogoAndText,
+  BackgroundImg
+} from "./Home.jsx";
 
 class Home extends Component {
   state = {
@@ -59,22 +71,19 @@ class Home extends Component {
     return (
       <div>
         <BackgroungPhoto>
-          <Color />
-          <img
-            src="https://image.freepik.com/free-photo/multi-ethnic-group-friends-talking-using-smartphones-meeting_1163-5149.jpg"
-            width="100%"
-            height="100%"
-            alt="back-font"
-          />
+          <BackgroundImg src={background} />
         </BackgroungPhoto>
 
         <GlobalStyle />
-        <LinkForLoginContainer>
-          <LinkForLogin to="/authenticate">Login</LinkForLogin>
-        </LinkForLoginContainer>
+        <PresentationWeb>Start a Journey...</PresentationWeb>
+        <LinkForLogin to="/authenticate">Login</LinkForLogin>
         <ContainerForContainerForCreateAccountFormContainer>
+          <ContainerForLogoAndText>
+            <Logo src={logo} alt="back-font" />
+            <LogoText>Avagram</LogoText>
+          </ContainerForLogoAndText>
           <ContainerForCreateAccountFormContainer>
-            <Header>Sign up for your account</Header>
+            <Header>Sign Up </Header>
             <CreateAccountFormContainer>
               <form onSubmit={this.onSubmit}>
                 <LabelAndInputRowContainer>
@@ -173,6 +182,11 @@ class Home extends Component {
               </form>
             </CreateAccountFormContainer>
           </ContainerForCreateAccountFormContainer>
+          <ContainerForSocials>
+            <SocialsEmblemas src={insta} alt="back-font" />
+            <SocialsEmblemas src={face} alt="back-font" />
+            <SocialsEmblemas src={tweet} alt="back-font" />
+          </ContainerForSocials>
         </ContainerForContainerForCreateAccountFormContainer>
       </div>
     );

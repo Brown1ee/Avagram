@@ -21,6 +21,9 @@ export const Label = styled.label`
   display: inline-block;
   margin-top: 20px;
   padding: 5px 0;
+  @media (max-width: 1060px) {
+    color: white;
+  }
 `;
 
 export const Span = styled.span`
@@ -53,39 +56,47 @@ export const JustFormContainer = styled.div`
 `;
 
 export const FormContainer = styled.div`
-  width: 400px;
   display: flex;
+  width: 350px;
   justify-content: center;
-  background-color: rgb(0, 0, 0);
-  background-color: rgba(0, 0, 0, 0.2);
+  flex-direction: column;
+  align-items: center;
   border-radius: 3px;
-  position: absolute;
-  padding-bottom: 11px;
+  padding: 9px;
 `;
 
 export const BackgroungPhoto = styled.div`
-  background: no-repeat center center fixed;
-  left: -10px;
-  top: -10px;
-  bottom: -10px;
+  width: 60%;
+  height: 100vh;
+  top: 0px;
   position: fixed;
-  right: -10px;
-  filter: blur(6px);
-  -webkit-filter: blur(8px);
+  @media (max-width: 1060px) {
+    width: 100%;
+    height: 100vh;
+    top: 0px;
+    position: fixed;
+  }
 `;
-export const Color = styled.div`
-  background: linear-gradient(#af96d4, #9b88b9);
-  position: absolute;
-  opacity: 0.5;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-`;
+
 export const ContainerForFormContainer = styled.div`
+  width: 40%;
+  height: 100vh;
+  top: 0px;
+  right: 0px;
+  position: fixed;
   display: flex;
   justify-content: center;
-  margin-top: 100px;
+  align-items: center;
+  @media (max-width: 1060px) {
+    width: 100%;
+    height: 100vh;
+    top: 0px;
+    right: 0px;
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 `;
 
 export const Row = styled.div`
@@ -101,6 +112,9 @@ export const Checkbox = styled.label`
   justify-content: flex-start;
   position: relative;
   right: 20px;
+  @media (max-width: 1060px) {
+    color: white;
+  }
 `;
 
 export const InputForCheckbox = styled.input`
@@ -109,7 +123,7 @@ export const InputForCheckbox = styled.input`
 `;
 
 export const LogInButton = styled.input`
-  border-radius: 5px;
+  border-radius: 9px;
   position: relative;
   left: 23px;
   height: 40px;
@@ -118,16 +132,22 @@ export const LogInButton = styled.input`
   margin-top: 30px;
   width: 300px;
   color: white;
-  background-color: #4ab1f5;
+  background-color: black;
   margin-left: 60px;
   height: 50px;
   width: 120px;
 `;
 
 export const Input = styled.input`
-  height: 38px;
-  border-radius: 5px;
-  border: none;
+  height: 46px;
+  max-width: 323px;
+  min-width: 290px;
+  flex: auto;
+  display: flex;
+  border-radius: 9px;
+  border: 1px solid #f2f2f2;
+  padding: 0 10px;
+  background-color: #f9fbfc;
 `;
 export const emblema = keyframes`
 0%{
@@ -141,18 +161,31 @@ top: 40px;
 export const Emblema = styled.p`
   position: relative;
   text-align: center;
-  font-size: 40px;
-  color: white;
+  font-size: 22px;
+  color: black;
   animation: ${emblema} 2s;
   animation-fill-mode: forwards;
+  font-family: "Marcellus SC", serif;
+  padding: 30px;
+  @media (max-width: 1060px) {
+    color: white;
+  }
 `;
 
 export const GlobalStyle = createGlobalStyle`
   body {
-    background-image: linear-gradient(to right top, #42464c, #0e7189, #00a09d, #00cb79, #a8eb12);
-    background-repeat: no-repeat;
-    background-size: cover;
-    height: 100vh;
+    position:absolute; top:0; bottom:0; right:0; left:0;
+  }
+  * {
+    margin:0;
+    padding:0;
+  }
+  html {
+    height: 100%;
   }
 `;
 
+export const BackgroundImg = styled.img`
+  width: 100%;
+  height: 100vh;
+`;

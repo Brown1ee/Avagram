@@ -5,10 +5,10 @@ const path = require("path");
 const jwt = require("jsonwebtoken");
 const mongoose = require("mongoose");
 const User = require("./todoListModel");
-const withAuth = require("./middleware");
+const withAuth = require("../middleware");
 const cors = require("cors");
 const dotenv = require("dotenv");
-const Picture = require("./photoModel");
+const Picture = require("../photoModel");
 const bcrypt = require("bcrypt");
 
 const saltRounds = 10;
@@ -30,14 +30,13 @@ app.use(cookieParser());
 mongoose.set("useFindAndModify", false);
 mongoose.set("useCreateIndex", true);
 mongoose.connect(
-  process.env.MONGODB_URI ||
-    "mongodb://avagram-sandbox:avagram_69@ds343887.mlab.com:43887/avagram-sandbox",
+  process.env.MONGODB_URI || "mongodb://localhost:27017/User",
   { useNewUrlParser: true },
   function(err) {
     if (err) {
       throw err;
     } else {
-      console.log(`Successfully connected to ${process.env.MONGODB_URL}`);
+      console.log(`Successfully connected to ${process.env.MONGODB_URI}`);
     }
   }
 );

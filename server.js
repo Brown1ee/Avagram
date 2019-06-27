@@ -5,10 +5,10 @@ const path = require("path");
 const jwt = require("jsonwebtoken");
 const mongoose = require("mongoose");
 const User = require("./todoListModel");
-const withAuth = require("../middleware");
+const withAuth = require("./middleware");
 const cors = require("cors");
 const dotenv = require("dotenv");
-const Picture = require("../photoModel");
+const Picture = require("./photoModel");
 const bcrypt = require("bcrypt");
 
 const saltRounds = 10;

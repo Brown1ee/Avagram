@@ -41,7 +41,7 @@ class Home extends Component {
   onSubmit = event => {
     event.preventDefault();
     axios
-      .post("api/register", this.state)
+      .post("http://localhost:8080/api/register", this.state)
       .then(res => {
         if (res.data.token) {
           sessionStorage.setItem("token", res.data.token);

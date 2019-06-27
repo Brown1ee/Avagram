@@ -99,6 +99,13 @@ export const ContainerForContainerForCreateAccountFormContainer = styled.div`
 export const InputErrorColor = styled.input`
   border-bottom: 1px solid red;
   background-color: rgba(255, 0, 0, 0.171);
+  height: 46px;
+  max-width: 323px;
+  min-width: 290px;
+  flex: auto;
+  display: flex;
+  border-radius: 9px;
+  padding: 0 10px;
 `;
 
 export const InputNormalColor = styled.input`

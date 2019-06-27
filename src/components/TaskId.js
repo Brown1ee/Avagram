@@ -59,7 +59,7 @@ export default class TaskId extends Component {
 
   componentDidMount() {
     this.setState({ isLoading: true });
-    fetch("https://avagram.herokuapp.com/api/secret", {
+    fetch("http://localhost:8080/api/secret", {
       headers: {
         "x-access-token": sessionStorage.getItem("token")
       }
@@ -68,7 +68,7 @@ export default class TaskId extends Component {
       .then(res => this.setState({ message: res }));
 
     axios
-      .get("https://avagram.herokuapp.com/api/status", {
+      .get("http://localhost:8080/api/status", {
         headers: { "x-access-token": sessionStorage.getItem("token") }
       })
       .then(res =>
@@ -98,7 +98,7 @@ export default class TaskId extends Component {
 
   fetchUserPhoto() {
     axios
-      .get("https://avagram.herokuapp.com/api/picture", {
+      .get("http://localhost:8080/api/picture", {
         headers: {
           "x-access-token": sessionStorage.getItem("token")
         }
@@ -119,7 +119,7 @@ export default class TaskId extends Component {
 
   fetchUserAvatar() {
     axios
-      .get("https://avagram.herokuapp.com/api/avatar", {
+      .get("http://localhost:8080/api/avatar", {
         headers: {
           "x-access-token": sessionStorage.getItem("token")
         }
@@ -142,7 +142,7 @@ export default class TaskId extends Component {
         const base64Img = btoa(binaryStr);
         axios
           .post(
-            "https://avagram.herokuapp.com/api/picture",
+            "http://localhost:8080/api/picture",
             { data: base64Img },
             {
               headers: {
@@ -176,7 +176,7 @@ export default class TaskId extends Component {
         const base64ImgAvatar = btoa(binaryStr);
         axios
           .post(
-            "https://avagram.herokuapp.com/api/avatar",
+            "http://localhost:8080/api/avatar",
             { data: base64ImgAvatar },
             {
               headers: {
@@ -201,7 +201,7 @@ export default class TaskId extends Component {
 
   handleDelete = imageId => {
     axios
-      .delete(`https://avagram.herokuapp.com/api/picture/${imageId}`)
+      .delete(`http://localhost:8080/api/picture/${imageId}`)
       .then(res => {
         this.setState({ photo: res.data });
       })
@@ -214,7 +214,7 @@ export default class TaskId extends Component {
     const avatar = "";
     axios
       .post(
-        "https://avagram.herokuapp.com/api/avatar",
+        "http://localhost:8080/api/avatar",
         { data: avatar },
         {
           headers: {
@@ -235,7 +235,7 @@ export default class TaskId extends Component {
     const { status } = this.state;
     axios
       .post(
-        "https://avagram.herokuapp.com/api/status",
+        "http://localhost:8080/api/status",
         { status },
         {
           headers: { "x-access-token": sessionStorage.getItem("token") }
@@ -249,7 +249,7 @@ export default class TaskId extends Component {
       })
       .catch(err => this.setState({ error: err.response.data.errors.status }));
     axios
-      .get("https://avagram.herokuapp.com/api/status", {
+      .get("http://localhost:8080/api/status", {
         headers: { "x-access-token": sessionStorage.getItem("token") }
       })
       .then(res =>

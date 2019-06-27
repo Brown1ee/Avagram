@@ -13,7 +13,7 @@ export default function withAuth(ComponentToProtect, shouldRedirect) {
     };
 
     componentDidMount() {
-      fetch("checkToken", {
+      fetch("https://avagram.herokuapp.com/checkToken", {
         headers: {
           "x-access-token": sessionStorage.getItem("token")
         }

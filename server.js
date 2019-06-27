@@ -30,7 +30,8 @@ app.use(cookieParser());
 mongoose.set("useFindAndModify", false);
 mongoose.set("useCreateIndex", true);
 mongoose.connect(
-  process.env.MONGODB_URL || "mongodb://localhost/User",
+  process.env.MONGODB_URI ||
+    "mongodb://avagram-sandbox:avagram_69@ds343887.mlab.com:43887/avagram-sandbox",
   { useNewUrlParser: true },
   function(err) {
     if (err) {

@@ -1,0 +1,1 @@
+{"version":3,"sources":["LoadingComponent.css"],"names":[],"mappings":"AAAA,SACE,WAAY,CAEZ,sBACF","file":"main.14fc9bca.chunk.css","sourcesContent":[".loading {\r\n  width: 290px;\r\n  margin: auto;\r\n  margin-top: 300px;\r\n}\r\n"]}

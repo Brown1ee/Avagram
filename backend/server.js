@@ -29,21 +29,17 @@ app.use(cors());
 app.use(cookieParser());
 mongoose.set("useFindAndModify", false);
 mongoose.set("useCreateIndex", true);
-mongoose.connect(process.env.MONGODB_URL, { useNewUrlParser: true }, function(
-  err
-) {
-  if (err) {
-    throw err;
-  } else {
-    console.log(`Successfully connected to ${process.env.MONGODB_URL}`);
+mongoose.connect(
+  process.env.MONGODB_URI || "mongodb://localhost/User",
+  { useNewUrlParser: true },
+  function(err) {
+    if (err) {
+      throw err;
+    } else {
+      console.log(`Successfully connected to ${process.env.MONGODB_URL}`);
+    }
   }
-});
-
-app.use(express.static(path.join(__dirname, "public")));
-
-app.get("/", function(req, res) {
-  res.sendFile(path.join(__dirname, "../", "public", "index.html"));
-});
+);
 
 app.get("/api/home", function(req, res) {
   res.send("");
@@ -225,5 +221,18 @@ app.post("/api/authenticate", function(req, res) {
 app.get("/checkToken", withAuth, function(req, res) {
   res.sendStatus(200);
 });
+
+if (process.env.NODE_ENV === "production") {
+  app.use(express.static("client/build"));
+  app.get("*", (req, res) => {
+    res.sendFile(path.join(__dirname, "client", "build", "index.html"));
+  });
+}
+
+// app.use(express.static(path.join(__dirname, "public")));
+
+// app.get("/", function(req, res) {
+//   res.sendFile(path.join(__dirname, "../", "public", "index.html"));
+// });
 
 app.listen(process.env.PORT || 8080);

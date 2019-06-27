@@ -12,14 +12,14 @@ import {
   GlobalStyle,
   JustFormContainer,
   BackgroungPhoto,
-  BackgroundImg
+  BackgroundImg,
+  Label,
+  Row,
+  Checkbox,
+  LogInButton
 } from "./LoggInn.jsx";
 import axios from "axios";
 import classNames from "classnames";
-import { Label } from "./LoggInn.jsx";
-import { Row } from "./LoggInn.jsx";
-import { Checkbox } from "./LoggInn.jsx";
-import { LogInButton } from "./LoggInn.jsx";
 import background from "../static/background.jpg";
 
 class LoggInn extends Component {

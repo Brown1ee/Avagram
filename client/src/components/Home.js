@@ -1,14 +1,13 @@
 import React, { Component } from "react";
 import "./LoggInn.jsx";
 import axios from "axios";
-import { Header } from "./Home.jsx";
 import logo from "../static/logo.png";
 import background from "../static/background.jpg";
 import tweet from "../static/tweet.png";
 import face from "../static/face.png";
 import insta from "../static/insta.png";
-
 import {
+  Header,
   ErrorText,
   CreateAccountButton,
   CreateAccountFormContainer,
@@ -22,14 +21,12 @@ import {
   ContainerForContainerForCreateAccountFormContainer,
   ContainerForSocials,
   SocialsEmblemas,
-  PresentationWeb
-} from "./Home.jsx";
-import { BackgroungPhoto } from "./Home.jsx";
-import {
+  PresentationWeb,
   Logo,
   LogoText,
   ContainerForLogoAndText,
-  BackgroundImg
+  BackgroundImg,
+  BackgroungPhoto
 } from "./Home.jsx";
 
 class Home extends Component {

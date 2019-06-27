@@ -49,7 +49,7 @@ class LoggInn extends Component {
   onSubmit = event => {
     event.preventDefault();
     axios
-      .post("http://localhost:8080/api/authenticate", this.state)
+      .post("api/authenticate", this.state)
       .then(res => {
         if (res.data.token) {
           sessionStorage.setItem("token", res.data.token);
@@ -65,7 +65,7 @@ class LoggInn extends Component {
   };
 
   componentDidMount() {
-    fetch("http://localhost:8080/api/home")
+    fetch("api/home")
       .then(res => res.text())
       .then(res => {
         if (this._isMounted) {

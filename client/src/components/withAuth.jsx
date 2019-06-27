@@ -13,7 +13,7 @@ export default function withAuth(ComponentToProtect, shouldRedirect) {
     };
 
     componentDidMount() {
-      fetch("http://localhost:8080/checkToken", {
+      fetch("checkToken", {
         headers: {
           "x-access-token": sessionStorage.getItem("token")
         }
